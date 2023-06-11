@@ -3,9 +3,9 @@ using System.Windows.Input;
 
 namespace Lagosanto.Views;
 
-public partial class LoginView
+public partial class LoginWindowView: Window
 {
-    public LoginView()
+    public LoginWindowView()
     {
         InitializeComponent();
     }
@@ -28,5 +28,5 @@ public partial class LoginView
     {
         Application.Current.Shutdown();
     }
-    
+
 }

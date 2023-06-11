@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:Lagosanto"
              Startup="ApplicationStart">
     <Application.Resources>
-        <ResourceDictionary Source="/Styles/UIColors.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/UI.xaml"/>
+                <ResourceDictionary Source="Styles/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

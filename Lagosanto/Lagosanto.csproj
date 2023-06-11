@@ -13,7 +13,21 @@
     <None Remove="Images\password_icon.png" />
     <Resource Include="Images\password_icon.png" />
     <Page Remove="Styles\UIColors.xaml" />
-    <OriginalXamlResource Include="Styles\UIColors.xaml" />
+    <Page Update="Views\LoginWindowView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindowView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DeskDepartment\DeskDepartmentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
@@ -21,11 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <XamlRuntime>Wpf</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
   </ItemGroup>
 
 </Project>
