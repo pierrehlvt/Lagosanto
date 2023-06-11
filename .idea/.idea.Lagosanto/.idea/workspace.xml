@@ -7,7 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f2882bd-2763-488b-9de3-89799d42fe50" name="Changes" comment="" />
+    <list default="true" id="6f2882bd-2763-488b-9de3-89799d42fe50" name="Changes" comment="init develop">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/Lagosanto.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Lagosanto.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/recipe" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
   </component>
@@ -100,6 +105,7 @@
       <workItem from="1686131352847" duration="1793000" />
       <workItem from="1686294280648" duration="1111000" />
       <workItem from="1686295431742" duration="671000" />
+      <workItem from="1686481138342" duration="8557000" />
     </task>
     <task id="LOCAL-00001" summary="Create mvvvm vie vie model and model + command work. Create form In progress">
       <created>1681484611746</created>
@@ -115,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686295363821</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init develop">
+      <created>1686481173395</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686481173395</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +139,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Create mvvvm vie vie model and model + command work. Create form In progress" />
     <MESSAGE value="f" />
-    <option name="LAST_COMMIT_MESSAGE" value="f" />
+    <MESSAGE value="init develop" />
+    <option name="LAST_COMMIT_MESSAGE" value="init develop" />
   </component>
 </project>
