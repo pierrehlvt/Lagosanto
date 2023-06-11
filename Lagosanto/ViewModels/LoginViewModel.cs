@@ -7,10 +7,24 @@ namespace Lagosanto.ViewModels;
 public class LoginViewModel: ViewModelBase
 {
     
-    private string _username;
+    private string _username="";
     private SecureString _password;
     private string _errorMessage;
+    private bool _isViewVisible;
 
+
+    public bool IsViewVisible
+    {
+        get
+        {
+            return _isViewVisible;
+        }
+        set
+        {
+            _isViewVisible = value;
+            OnPropertyChanged(nameof(IsViewVisible));
+        }
+    }
     public string Username
     {
         get
@@ -71,6 +85,7 @@ public class LoginViewModel: ViewModelBase
     {
         //logique de connexion ICI
         MessageBox.Show("login !", "Alerte", MessageBoxButton.OK, MessageBoxImage.Warning);
+        IsViewVisible = false;
     }
     
 }

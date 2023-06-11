@@ -17,15 +17,23 @@
     <Window.DataContext>
         <viewModel:LoginViewModel></viewModel:LoginViewModel>
     </Window.DataContext>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+    </Window.Resources>
+    
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" 
+                 Converter="{StaticResource BooleanToVisibilityConverter}" />
+    </Window.Visibility>
     
     <Border CornerRadius="27"
             Background="white"
             BorderThickness="5">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#28AEED" Offset="0"/>
-                <GradientStop Color="#6F3BD4" Offset="0.75"/>
-                <GradientStop Color="#EB4D6A" Offset="1"/>
+                <GradientStop Color="{StaticResource WinBorderColor1}" Offset="0"/>
+                <GradientStop Color="{StaticResource WinBorderColor2}" Offset="0.75"/>
+                <GradientStop Color="{StaticResource WinBorderColor3}" Offset="1"/>
             </LinearGradientBrush>
         </Border.BorderBrush>
         <Grid>
@@ -41,7 +49,7 @@
                     <ColumnDefinition Width="5"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="CONNEXION"
-                           Foreground="#28AEED"
+                           Foreground="{StaticResource Color3}"
                            FontSize="15"
                            Grid.Column="0"
                            VerticalAlignment="Center"
@@ -57,8 +65,8 @@
                             <Setter Property="Background" Value="Transparent"></Setter>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#28AEED"></Setter>
-                                    <Setter Property="Foreground" Value="White"></Setter>
+                                    <Setter Property="Background" Value="{StaticResource Color3}"></Setter>
+                                    <Setter Property="Foreground" Value="{StaticResource Color11}"></Setter>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -84,8 +92,8 @@
                             <Setter Property="Background" Value="Transparent"></Setter>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#EB4D6A"></Setter>
-                                    <Setter Property="Foreground" Value="White"></Setter>
+                                    <Setter Property="Background" Value="{StaticResource Color4}"></Setter>
+                                    <Setter Property="Foreground" Value="{StaticResource Color11}"></Setter>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
@@ -102,7 +110,7 @@
             </Grid>
             <StackPanel Width="250" Grid.Row="1" Orientation="Vertical" Margin="0,50,0,25">
                 <TextBlock Text="LAGOSANTO" HorizontalAlignment="Center" FontFamily="Arial" FontSize="25" 
-                           Foreground="#2596BE"
+                           Foreground="{StaticResource Color3}"
                            FontWeight="DemiBold" Margin="0,0,0,100"></TextBlock>
                 <TextBlock Text="Nom utilisateur" FontFamily="Arial" FontSize="15" ></TextBlock>
                 
@@ -111,8 +119,6 @@
                          FontSize="13"
                          FontWeight="Medium"
                          FontFamily="Montserrat"                            
-                         CaretBrush="LightGray"
-                         BorderBrush="DarkGray"
                          BorderThickness="0,0,0,2"
                          Height="28"
                          VerticalContentAlignment="Center"
@@ -127,10 +133,11 @@
                 
                 <TextBlock Text="Mot de passe" FontFamily="Arial" FontSize="15"></TextBlock>
                 <customControls:BindablePassword
-                    Password="{Binding Password,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Height="28"></customControls:BindablePassword>
+                    Password="{Binding Password,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                    Height="28"></customControls:BindablePassword>
                 
                 <TextBlock Text="{Binding ErrorMessage}"
-                           Foreground="#EB4D6A"
+                           Foreground="{StaticResource Color4}"
                            FontSize="15"></TextBlock>
                 
                 
@@ -145,10 +152,10 @@
                         Command="{Binding LoginCommand}">
                     <Button.Style>
                         <Style TargetType="Button">
-                            <Setter Property="Background" Value="#2596BE"/>
+                            <Setter Property="Background" Value="{StaticResource Color3}"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#28AEED"/>
+                                    <Setter Property="Background" Value="{StaticResource Color3}"/>
                                 </Trigger>
                             </Style.Triggers>
                         </Style>

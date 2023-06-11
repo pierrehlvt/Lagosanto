@@ -7,11 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f2882bd-2763-488b-9de3-89799d42fe50" name="Changes" comment="init develop">
+    <list default="true" id="6f2882bd-2763-488b-9de3-89799d42fe50" name="Changes" comment="create form login + implements mvvm">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/App.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/Lagosanto.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Lagosanto.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/LoginViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/LoginView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/LoginView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/LoginView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/LoginView.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +31,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Julien Mallet/Documents/GitHub/Lagosanto/Lagosanto/App.xaml.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Julien Mallet/Documents/GitHub/Lagosanto/Lagosanto/App.xaml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -105,7 +110,7 @@
       <workItem from="1686131352847" duration="1793000" />
       <workItem from="1686294280648" duration="1111000" />
       <workItem from="1686295431742" duration="671000" />
-      <workItem from="1686481138342" duration="8557000" />
+      <workItem from="1686481138342" duration="10710000" />
     </task>
     <task id="LOCAL-00001" summary="Create mvvvm vie vie model and model + command work. Create form In progress">
       <created>1681484611746</created>
@@ -128,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686481173395</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="create form login + implements mvvm">
+      <created>1686489961851</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686489961851</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +152,7 @@
     <MESSAGE value="Create mvvvm vie vie model and model + command work. Create form In progress" />
     <MESSAGE value="f" />
     <MESSAGE value="init develop" />
-    <option name="LAST_COMMIT_MESSAGE" value="init develop" />
+    <MESSAGE value="create form login + implements mvvm" />
+    <option name="LAST_COMMIT_MESSAGE" value="create form login + implements mvvm" />
   </component>
 </project>

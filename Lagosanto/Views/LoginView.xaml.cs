@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace Lagosanto.Views;
 
-public partial class LoginView : Window
+public partial class LoginView
 {
     public LoginView()
     {
