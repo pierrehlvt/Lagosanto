@@ -7,8 +7,11 @@
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
         xmlns:viewModel="clr-namespace:Lagosanto.ViewModels"
+        xmlns:viewDeskModel="clr-namespace:Lagosanto.ViewModels.DeskDepartment"
+        xmlns:viewFabricationModel="clr-namespace:Lagosanto.ViewModels.FabricationDepartment"
         Title="DeskView" Height="900" Width="1500"
         xmlns:viewDeskDepartment="clr-namespace:Lagosanto.Views.DeskDepartment"
+        xmlns:viewFabricationDepartment="clr-namespace:Lagosanto.Views.FabricationDepartment"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
@@ -20,14 +23,17 @@
     </Window.DataContext>
     
     <Window.Resources>
-        <DataTemplate DataType="{x:Type viewModel:DeskViewModel}">
+        <DataTemplate DataType="{x:Type viewDeskModel:DeskViewModel}">
             <local:DeskDepartmentView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:AddRecipeViewModel}">
+        <DataTemplate DataType="{x:Type viewDeskModel:AddRecipeViewModel}">
             <viewDeskDepartment:AddRecipeView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:RecipeViewModel}">
+        <DataTemplate DataType="{x:Type viewDeskModel:RecipeViewModel}">
             <viewDeskDepartment:RecipeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewFabricationModel:FabricationViewModel}">
+            <viewFabricationDepartment:FabricationDepartmentView/>
         </DataTemplate>
     </Window.Resources>
     

@@ -5,11 +5,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Lagosanto.Views.DeskDepartment"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-        xmlns:viewModel="clr-namespace:Lagosanto.ViewModels"
+        xmlns:viewDeskModel="clr-namespace:Lagosanto.ViewModels.DeskDepartment"
         mc:Ignorable="d" Background="Transparent">
     
     <UserControl.DataContext>
-        <viewModel:DeskViewModel></viewModel:DeskViewModel>
+        <viewDeskModel:DeskViewModel></viewDeskModel:DeskViewModel>
     </UserControl.DataContext>
     
     <Grid>

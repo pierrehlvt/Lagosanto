@@ -1,12 +1,12 @@
-using System.Security;
-using System.Windows;
-using System.Windows.Input;
+
+using Lagosanto.ViewModels.DeskDepartment;
+using Lagosanto.ViewModels.FabricationDepartment;
 
 namespace Lagosanto.ViewModels;
 
 public class MainWindowViewModel: ViewModelBase
 {
-    private ViewModelBase _currentViewModel;
+    private ViewModelBase _currentViewModel = null!;
     
     public ViewModelBase CurrentViewModel
     {
@@ -28,16 +28,16 @@ public class MainWindowViewModel: ViewModelBase
     
     protected void ChangeViewModelDependingOnRole()
     {
-        string role = "Admin";
+        string role = "Desk";
 
-        if (role == "Admin")
+        if (role == "Desk")
         {
             CurrentViewModel = new DeskViewModel();
         }
 
-        if (role=="")
+        if (role=="Fabrication")
         {
-            
+            CurrentViewModel = new FabricationViewModel();
         }
     }
 

@@ -6,5 +6,5 @@
              xmlns:local="clr-namespace:Lagosanto.Views.DeskDepartment"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-        <TextBox Text="FORMULAIRE RECETTE"></TextBox>
+        <TextBlock Text="FORMULAIRE RECETTE"></TextBlock>
 </UserControl>

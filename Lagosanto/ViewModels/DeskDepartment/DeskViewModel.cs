@@ -1,13 +1,13 @@
 using System.Windows.Input;
 using FontAwesome.Sharp;
 
-namespace Lagosanto.ViewModels;
+namespace Lagosanto.ViewModels.DeskDepartment;
 
 public class DeskViewModel: ViewModelBase
 {
     
-    private ViewModelBase _currentChildViewModel;
-    private string _caption;
+    private ViewModelBase _currentChildViewModel = null!;
+    private string _caption = null!;
     private IconChar _iconChar;
     
     public string Caption
@@ -58,7 +58,7 @@ public class DeskViewModel: ViewModelBase
         ShowAddRecipeViewCommand = new ViewModelCommand(ExecuteShowAddRecipeViewCommand);
         ShowRecipeViewCommand = new ViewModelCommand(ExecuteShowRecipeViewCommand);
 
-        ExecuteShowRecipeViewCommand(null);
+        ExecuteShowRecipeViewCommand(null!);
         
     }
 

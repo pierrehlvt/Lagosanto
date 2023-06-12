@@ -12,7 +12,7 @@ public class ViewModelCommand: ICommand
     public ViewModelCommand(Action<object> executeAction)
     {
         _executeAction = executeAction;
-        _canExecuteAction = null;
+        _canExecuteAction = null!;
     }
     
     public ViewModelCommand(Action<object> executeAction, Predicate<object> canExecuteAction)
@@ -23,12 +23,12 @@ public class ViewModelCommand: ICommand
 
     public bool CanExecute(object? parameter)
     {
-        return _canExecuteAction == null || _canExecuteAction(parameter);
+        return parameter != null && _canExecuteAction(parameter);
     }
 
     public void Execute(object? parameter)
     {
-        _executeAction(parameter);
+        if (parameter != null) _executeAction(parameter);
     }
 
     public event EventHandler? CanExecuteChanged

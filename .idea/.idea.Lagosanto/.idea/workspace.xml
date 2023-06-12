@@ -8,36 +8,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff6a5882-6ae9-4f31-8b84-8d8b80400638" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Styles/ButtonStyle.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Styles/UI.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/AddRecipeViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/RecipeViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/MainWindowViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/AddRecipeView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/AddRecipeView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/DeskDepartmentView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/DeskDepartmentView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/RecipeView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/RecipeView.xaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/MainWindowView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/MainWindowView.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/FabricationDepartment/FabricationViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/FabricationDepartment/FabricationDepartmentView.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/FabricationDepartment/FabricationDepartmentView.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/App.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/Lagosanto.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Lagosanto.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/Styles/UIColors.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/AddRecipeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/AddRecipeViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/DeskViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/DeskViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/RecipeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/RecipeViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/LoginViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/MainWindowModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/DeskViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/LoginView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/LoginWindowView.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/LoginView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/LoginWindowView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/MainWindow.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/MainWindow.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/MainWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/ViewModelCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/ViewModelCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/AddRecipeView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/AddRecipeView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/DeskDepartmentView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/DeskDepartmentView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/MainWindowView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/MainWindowView.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/DeskDepartmentView.xaml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2R3xECZPYa6WB4frGTObflGcBsW" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,25 +39,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Julien Mallet\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Julien Mallet\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\Julien Mallet\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Julien Mallet\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Julien Mallet\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Julien Mallet\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Lagosanto" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -93,14 +87,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1686492453152</updated>
-      <workItem from="1686492454595" duration="13436000" />
+      <workItem from="1686492454595" duration="13547000" />
+      <workItem from="1686589629681" duration="2660000" />
     </task>
+    <task id="LOCAL-00001" summary="view recipe add recipe ok style for ok">
+      <created>1686506301494</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686506301494</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="view recipe add recipe ok style for ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="view recipe add recipe ok style for ok" />
   </component>
 </project>

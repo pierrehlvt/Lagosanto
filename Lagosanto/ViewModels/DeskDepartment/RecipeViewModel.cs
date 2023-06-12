@@ -1,4 +1,4 @@
-﻿namespace Lagosanto.ViewModels;
+﻿namespace Lagosanto.ViewModels.DeskDepartment;
 
 public class RecipeViewModel: ViewModelBase
 {
