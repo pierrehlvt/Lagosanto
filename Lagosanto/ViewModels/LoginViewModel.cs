@@ -8,7 +8,7 @@ public class LoginViewModel: ViewModelBase
 {
     
     private string _username="";
-    private SecureString _password = null!;
+    private SecureString _password;
     private string _errorMessage = null!;
     private bool _isViewVisible=true;
 
@@ -73,7 +73,7 @@ public class LoginViewModel: ViewModelBase
 
     private bool CanExecuteLoginCommand(object obj)
     {
-        if (string.IsNullOrWhiteSpace(Username) || Username.Length < 3 || _password.Length < 3)
+        if (string.IsNullOrWhiteSpace(Username) || Username.Length < 3 || Password == null || _password.Length < 3)
         {
            return false;
         }

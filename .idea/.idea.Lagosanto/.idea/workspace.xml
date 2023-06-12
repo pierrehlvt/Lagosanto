@@ -8,18 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff6a5882-6ae9-4f31-8b84-8d8b80400638" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/FabricationDepartment/FabricationViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/FabricationDepartment/FabricationDepartmentView.xaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lagosanto/Views/FabricationDepartment/FabricationDepartmentView.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/AddRecipeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/AddRecipeViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/DeskViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/DeskViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/RecipeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/RecipeViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/LoginViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/LoginViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/MainWindowViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/ViewModelCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/ViewModelCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/AddRecipeView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/AddRecipeView.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/DeskDepartmentView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/DeskDepartmentView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/RecipeView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/RecipeView.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/Views/MainWindowView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/MainWindowView.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +23,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/Users/Julien Mallet/Documents/GitHub/Lagosanto/Lagosanto/Views/DeskDepartment/AddRecipeView.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/DeskDepartmentView.xaml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -88,7 +84,8 @@
       <option name="presentableId" value="Default" />
       <updated>1686492453152</updated>
       <workItem from="1686492454595" duration="13547000" />
-      <workItem from="1686589629681" duration="2660000" />
+      <workItem from="1686589629681" duration="2723000" />
+      <workItem from="1686600817030" duration="1339000" />
     </task>
     <task id="LOCAL-00001" summary="view recipe add recipe ok style for ok">
       <created>1686506301494</created>
@@ -97,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686506301494</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="init dashboard for fabrication + clean code">
+      <created>1686592395937</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686592395937</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +111,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="view recipe add recipe ok style for ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="view recipe add recipe ok style for ok" />
+    <MESSAGE value="init dashboard for fabrication + clean code" />
+    <option name="LAST_COMMIT_MESSAGE" value="init dashboard for fabrication + clean code" />
   </component>
 </project>

@@ -57,7 +57,6 @@ public class DeskViewModel: ViewModelBase
     {
         ShowAddRecipeViewCommand = new ViewModelCommand(ExecuteShowAddRecipeViewCommand);
         ShowRecipeViewCommand = new ViewModelCommand(ExecuteShowRecipeViewCommand);
-
         ExecuteShowRecipeViewCommand(null!);
         
     }

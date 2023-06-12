@@ -8,5 +8,15 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <TextBlock Text="Chargez recette"></TextBlock>
+        <Button x:Name="InputTest"                          
+                BorderThickness="0"
+                Content="test"
+                FontSize="12"
+                Foreground="White"
+                FontFamily="Montserrat"
+                Cursor="Hand"                           
+                Margin="0,50,0,0"
+                Command="{Binding TestCommand}">
+        </Button>
     </Grid>
 </UserControl>

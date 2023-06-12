@@ -84,9 +84,8 @@
                                        FontWeight="Bold"/>    
                         </StackPanel>
                     </Grid>
-                    <ContentControl Content="{Binding CurrentChildViewModel}" Grid.Row="2" Margin="15">
-                            
-                    </ContentControl>
+                    <ContentControl Content="{Binding CurrentChildViewModel}"
+                                    Grid.Row="2" Margin="15"/>
                 </Grid>
             </Border>
         </Grid>

@@ -15,9 +15,9 @@ namespace Lagosanto
              var loginView = new LoginWindowView();
              loginView.Show();
              loginView.IsVisibleChanged += (sender, e) =>
-             {//provoque un lag à la fermeture de la fenetre
+             {//provoque une erreur à la fermeture de la fenetre
                  if (loginView is not { IsVisible: false, IsLoaded: true }) return;
-                 var mainView = new MainWindowView();
+                 Window mainView = new MainWindowView();
                  mainView.Show();
                  loginView.Close();
              };  
