@@ -8,17 +8,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff6a5882-6ae9-4f31-8b84-8d8b80400638" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Models/Article.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Models/Category.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Models/Operation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Models/Recipe.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Services/AlgorithmService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Services/ArticleService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Services/CategoryService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Services/OperationService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Services/RecipeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Services/StringToArrayConverterService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lagosanto/Services/interfaces/IHttp.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Lagosanto/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/App.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/LoginWindowView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/LoginWindowView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/Lagosanto.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Lagosanto.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/RecipeViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/RecipeViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/RecipeView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/RecipeView.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9f535253597dc73165d33550c23edc02f9239e97075d6c42772e7c8d9f6833/WpfXamlLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e4e8886b208868416341c18e8dec6533738df3eed99e22c8c4e3fd31cc9ee4/Window.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eefe83c59fa0c203716dd8fafd52fc379d21c4dc5274e4f6b324fbf9f93d0/DynamicMethodRuntime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Lagosanto/Views/DeskDepartment/DeskDepartmentView.xaml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -82,6 +105,7 @@
       <workItem from="1686589629681" duration="2723000" />
       <workItem from="1686600817030" duration="1587000" />
       <workItem from="1686689716043" duration="672000" />
+      <workItem from="1686691498962" duration="2261000" />
     </task>
     <task id="LOCAL-00001" summary="view recipe add recipe ok style for ok">
       <created>1686506301494</created>
@@ -104,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686602394752</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add condition to loginview">
+      <created>1686690684978</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686690684978</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,23 +147,37 @@
     <MESSAGE value="view recipe add recipe ok style for ok" />
     <MESSAGE value="init dashboard for fabrication + clean code" />
     <MESSAGE value="fix button disable in login" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix button disable in login" />
+    <MESSAGE value="add condition to loginview" />
+    <option name="LAST_COMMIT_MESSAGE" value="add condition to loginview" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Lagosanto/App.xaml.cs</url>
-          <line>28</line>
-          <properties documentPath="C:\Users\Julien Mallet\Documents\GitHub\Lagosanto\Lagosanto\App.xaml.cs" initialLine="28" containingFunctionPresentation="Lambda expression inside Method 'ApplicationStart'">
+          <line>36</line>
+          <properties documentPath="C:\Users\Julien Mallet\Documents\GitHub\Lagosanto\Lagosanto\App.xaml.cs" initialLine="36" containingFunctionPresentation="Lambda expression inside Method 'ApplicationStart'">
             <startOffsets>
-              <option value="867" />
+              <option value="1272" />
             </startOffsets>
             <endOffsets>
-              <option value="889" />
+              <option value="1301" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Lagosanto/ViewModels/DeskDepartment/RecipeViewModel.cs</url>
+          <line>42</line>
+          <properties documentPath="C:\Users\Julien Mallet\Documents\GitHub\Lagosanto\Lagosanto\ViewModels\DeskDepartment\RecipeViewModel.cs" initialLine="49" containingFunctionPresentation="Method 'ExecuteLoadRecipeCommand'">
+            <startOffsets>
+              <option value="841" />
+            </startOffsets>
+            <endOffsets>
+              <option value="872" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

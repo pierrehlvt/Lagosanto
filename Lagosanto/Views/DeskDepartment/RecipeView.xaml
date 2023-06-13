@@ -4,19 +4,50 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Lagosanto.Views.DeskDepartment"
-             mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             mc:Ignorable="d">
     <Grid>
-        <TextBlock Text="Chargez recette"></TextBlock>
-        <Button x:Name="InputTest"                          
-                BorderThickness="0"
-                Content="test"
-                FontSize="12"
-                Foreground="White"
-                FontFamily="Montserrat"
-                Cursor="Hand"                           
-                Margin="0,50,0,0"
-                Command="{Binding TestCommand}">
-        </Button>
+        <StackPanel>
+            <TextBox x:Name="InputRecipeId"
+                     Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}"
+                     FontSize="13"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"                            
+                     BorderThickness="0,0,0,2"
+                     Height="28"
+                     VerticalContentAlignment="Center"
+                     Margin="0,5,0,25"
+                     Padding="35,0,0,0">
+            </TextBox>
+            <Button x:Name="InputLoadRecipe"                         
+                    BorderThickness="0"
+                    Content="Charger la recette"
+                    FontSize="12"
+                    Foreground="White"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"                           
+                    Margin="0,50,0,0"
+                    Command="{Binding LoadRecipeCommand}">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="{StaticResource Color8}"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Color3}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" Height="40"
+                                CornerRadius="20"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
     </Grid>
 </UserControl>

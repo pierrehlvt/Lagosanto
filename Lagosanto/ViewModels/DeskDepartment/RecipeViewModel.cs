@@ -1,19 +1,46 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
+using Lagosanto.Services;
 
 namespace Lagosanto.ViewModels.DeskDepartment;
 
 public class RecipeViewModel: ViewModelBase
 {
-    public ICommand TestCommand { get;}
+    private AlgorithmService _algorithmService;
+    private int _id { get; set; }
+    
+    public int Id
+    {
+        get
+        {
+            return _id;
+        }
+        set
+        {
+            _id = value;
+            OnPropertyChanged(nameof(Id));
+        }
+    }
+    
+    public ICommand LoadRecipeCommand { get;}
+    
     public RecipeViewModel()
     {
-        TestCommand = new ViewModelCommand(ExecuteTestCommand);
-        
+        LoadRecipeCommand = new ViewModelCommand(ExecuteLoadRecipeCommand,CanExecuteLoadRecipeCommand);
     }
-
-    private void ExecuteTestCommand(object obj)
+    
+    private bool CanExecuteLoadRecipeCommand(object obj)
     {
-        MessageBox.Show("Button test", "Alerte", MessageBoxButton.OK, MessageBoxImage.Warning);
+        if (Id < 1)
+        {
+            return false;
+        }
+
+        return true;
+    }
+    private void ExecuteLoadRecipeCommand(object obj)
+    {
+        _algorithmService.TestAlgo(Id);
     }
 }
