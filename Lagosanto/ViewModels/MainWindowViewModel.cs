@@ -28,7 +28,7 @@ public class MainWindowViewModel: ViewModelBase
     
     protected void ChangeViewModelDependingOnRole()
     {
-        string role = "Desk";
+        string role = "Fabrication";
 
         if (role == "Desk")
         {

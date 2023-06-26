@@ -9,7 +9,7 @@
         xmlns:viewModel="clr-namespace:Lagosanto.ViewModels"
         xmlns:viewDeskModel="clr-namespace:Lagosanto.ViewModels.DeskDepartment"
         xmlns:viewFabricationModel="clr-namespace:Lagosanto.ViewModels.FabricationDepartment"
-        Title="DeskView" Height="900" Width="1500"
+        Title="DeskView" Height="700" Width="1200"
         xmlns:viewDeskDepartment="clr-namespace:Lagosanto.Views.DeskDepartment"
         xmlns:viewFabricationDepartment="clr-namespace:Lagosanto.Views.FabricationDepartment"
         WindowStyle="None"
@@ -34,6 +34,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewFabricationModel:FabricationViewModel}">
             <viewFabricationDepartment:FabricationDepartmentView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewFabricationModel:ProductionViewModel}">
+            <viewFabricationDepartment:ProductionView/>
         </DataTemplate>
     </Window.Resources>
     

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using Lagosanto.Services;
 using Lagosanto.ViewModels;
 using Lagosanto.ViewModels.DeskDepartment;
 using Lagosanto.ViewModels.FabricationDepartment;
@@ -24,19 +23,19 @@ namespace Lagosanto
                  if (loginView.IsVisible || !loginView.IsLoaded) return;
                  {
                      try{
-                     Dispatcher.BeginInvoke(new Action(() =>
+                         Dispatcher.BeginInvoke(new Action(() =>
+                         {
+                             Window mainView = new MainWindowView();
+                             mainView.DataContext = DependencyInjection().GetRequiredService<MainWindowViewModel>();
+                             mainView.Show();
+                             loginView.Close();
+                         }));
+                     }
+                     catch (Exception exception)
                      {
-                         Window mainView = new MainWindowView();
-                         mainView.DataContext = DependencyInjection().GetRequiredService<MainWindowViewModel>();
-                         mainView.Show();
-                         loginView.Close();
-                     }));
-                        }
-                        catch (Exception exception)
-                        {
-                            Console.WriteLine(exception);
-                            throw;
-                        }
+                         Console.WriteLine(exception);
+                         throw;
+                     }
                  }
              };  
             
@@ -45,16 +44,12 @@ namespace Lagosanto
         private ServiceProvider DependencyInjection()
         {
             var services = new ServiceCollection();
-            services.AddSingleton<ArticleService>();
-            services.AddSingleton<CategoryService>();
-            services.AddSingleton<OperationService>();
-            services.AddSingleton<RecipeService>();
-            services.AddSingleton<AlgorithmService>();
             services.AddSingleton<LoginWindowView>();
             services.AddSingleton<AddRecipeViewModel>();
             services.AddSingleton<RecipeViewModel>();
             services.AddSingleton<AddRecipeViewModel>();
             services.AddSingleton<FabricationViewModel>();
+            services.AddSingleton<ProductionViewModel>();
             services.AddSingleton<MainWindowViewModel>();
             var serviceProvider = services.BuildServiceProvider();
             return serviceProvider; 

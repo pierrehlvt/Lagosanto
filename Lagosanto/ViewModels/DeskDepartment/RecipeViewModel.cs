@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using Lagosanto.Services;
 
 namespace Lagosanto.ViewModels.DeskDepartment;
 
 public class RecipeViewModel: ViewModelBase
-{
-    private AlgorithmService _algorithmService;
+{ 
     private int _id { get; set; }
     
     public int Id
@@ -41,6 +39,6 @@ public class RecipeViewModel: ViewModelBase
     }
     private void ExecuteLoadRecipeCommand(object obj)
     {
-        _algorithmService.TestAlgo(Id);
+        
     }
 }
