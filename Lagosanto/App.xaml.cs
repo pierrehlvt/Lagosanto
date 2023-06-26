@@ -17,6 +17,8 @@ namespace Lagosanto
         {
             
              var loginView = new LoginWindowView();
+             DatabaseHelper databaseHelper = new DatabaseHelper();
+             
              loginView.Show();
              loginView.IsVisibleChanged += (_, _) =>
              {

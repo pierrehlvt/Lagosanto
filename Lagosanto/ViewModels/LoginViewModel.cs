@@ -1,6 +1,11 @@
+using System.Net;
 using System.Security;
+using System.Security.Principal;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
+using Lagosanto.Repositories;
+using Lagosanto.Repositories.Interfaces;
 
 namespace Lagosanto.ViewModels;
 
@@ -11,7 +16,7 @@ public class LoginViewModel: ViewModelBase
     private SecureString _password;
     private string _errorMessage = null!;
     private bool _isViewVisible=true;
-
+    private IUserRepository userRepository;
 
     public bool IsViewVisible
     {
@@ -68,6 +73,7 @@ public class LoginViewModel: ViewModelBase
 
     public LoginViewModel()
     {
+        userRepository = new UserRepository();
         LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
     }
 
@@ -83,9 +89,17 @@ public class LoginViewModel: ViewModelBase
 
     public void ExecuteLoginCommand(object obj)
     {
-        //logique de connexion ICI
-        MessageBox.Show("login !", "Alerte", MessageBoxButton.OK, MessageBoxImage.Warning);
-        IsViewVisible = false;
+        var isValidUser = userRepository.AuthenticateUser(new NetworkCredential(Username, Password));
+        if (isValidUser)
+        {
+            Thread.CurrentPrincipal = new GenericPrincipal(
+                new GenericIdentity(Username), null);
+            IsViewVisible = false;
+        }
+        else
+        {
+            ErrorMessage = "* Utilisateur ou mot de passe invalide";
+        }
     }
     
 }
