@@ -18,6 +18,7 @@ namespace Lagosanto
         {
             
              LoginWindowView loginView = new LoginWindowView();
+             DatabaseHelper databaseHelper = new DatabaseHelper();
              loginView.Show();
              loginView.IsVisibleChanged += (_, _) =>
              {
@@ -45,7 +46,6 @@ namespace Lagosanto
         private ServiceProvider DependencyInjection()
         {
             var services = new ServiceCollection();
-            services.AddSingleton<ProductionService>();
             services.AddSingleton<LoginWindowView>();
             services.AddSingleton<AddRecipeViewModel>();
             services.AddSingleton<RecipeViewModel>();

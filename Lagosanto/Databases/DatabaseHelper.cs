@@ -13,20 +13,19 @@ public class DatabaseHelper: DatabaseBase
         {
             GetConnection().Open();
             CreateTables();
-            
             User desk = new User();
             desk.Username = "desk";
             desk.Password = "1234";
-            desk.LastName = "Didier";
-            desk.Name = "Jean";
+            desk.LastName = "Dupont";
+            desk.Name = "Pierre";
             desk.Role = Role.ROLE_DESK;
             
             User fabrication = new User();
             fabrication.Username = "fabrication";
-            desk.Password = "1234";
-            desk.LastName = "Dupont";
-            desk.Name = "Pierre";
-            desk.Role = Role.ROLE_FABRICATION;
+            fabrication.Password = "1234";
+            fabrication.LastName = "Dupont";
+            fabrication.Name = "Pierre";
+            fabrication.Role = Role.ROLE_FABRICATION;
             
             InsertUser(desk);
             InsertUser(fabrication);
