@@ -1,13 +1,13 @@
-using System.Data.SQLite;
+﻿using System.Data.SQLite;
 
-namespace Lagosanto.Repositories;
+namespace Lagosanto.Databases;
 
-public class RepositoryBase
+public class DatabaseBase
 {
     private SQLiteConnection _connection;
     private const string USER_DB = "users.db";
 
-    public RepositoryBase()
+    public DatabaseBase()
     { 
         _connection = new SQLiteConnection($"Data Source={USER_DB};Version=3;");
     }
@@ -15,5 +15,10 @@ public class RepositoryBase
     public SQLiteConnection GetConnection()
     {
         return _connection;
+    }
+
+    public string GetDB()
+    {
+        return USER_DB;
     }
 }

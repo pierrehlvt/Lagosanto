@@ -4,22 +4,21 @@ using System.Data;
 using System.Data.SQLite;
 using System.Net;
 using System.Windows.Forms;
+using Lagosanto.Databases;
 using Lagosanto.Models;
 using Lagosanto.Repositories.Interfaces;
 namespace Lagosanto.Repositories;
 
-    public class UserRepository : RepositoryBase,IUserRepository
+    public class UserRepository : DatabaseBase,IUserRepository
     {
 
         private readonly DatabaseHelper _databaseHelper;
         private SQLiteCommand _command;
-        private SQLiteConnection _connection;
 
         public UserRepository()
         {
             _databaseHelper = new DatabaseHelper();
-            _connection = GetConnection();
-            _command = new SQLiteCommand(_connection);
+            _command = new SQLiteCommand(GetConnection());
         }
         public void Add(User userModel)
         {
@@ -29,11 +28,11 @@ namespace Lagosanto.Repositories;
         public bool AuthenticateUser(NetworkCredential credential)
         {
             bool validUser;
-            if (_connection.State != ConnectionState.Open)
+            if (GetConnection().State != ConnectionState.Open)
             {
-                _connection.Open();
+                GetConnection().Open();
             }
-            _command = _connection.CreateCommand();
+            _command = GetConnection().CreateCommand();
             _command.CommandText = "SELECT COUNT(*) FROM [User] WHERE Username=@username AND Password=@password";
             _command.Parameters.AddWithValue("@username", credential.UserName);
             _command.Parameters.AddWithValue("@password", credential.Password);
@@ -63,7 +62,7 @@ namespace Lagosanto.Repositories;
         {
             User user = new User();
 
-            _connection.Open();
+            GetConnection().Open();
             _command.CommandText = "SELECT * FROM [User] WHERE username=@username";
             _command.Parameters.AddWithValue("@username", username);
             var reader = _command.ExecuteReader();
@@ -76,11 +75,12 @@ namespace Lagosanto.Repositories;
                     Username = reader.GetString(1),
                     Password = string.Empty,
                     Name = reader.GetString(3),
-                    LastName = reader.GetString(4)
+                    LastName = reader.GetString(4),
+                    Role = reader.GetString(5)
                 };
             }
 
-            _connection.Close();
+            GetConnection().Close();
             return user;
         }
 

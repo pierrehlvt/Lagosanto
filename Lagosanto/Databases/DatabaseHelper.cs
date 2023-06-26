@@ -1,26 +1,27 @@
 using System.Data.SQLite;
 using System.IO;
+using Lagosanto.Databases;
+using Lagosanto.Models;
 
-public class DatabaseHelper
+public class DatabaseHelper: DatabaseBase
 {
-    private const string USER_DB = "users.db";
     public DatabaseHelper()
     {
-        bool isNewDatabase = !File.Exists(USER_DB);
-        SQLiteConnection connection = new SQLiteConnection($"Data Source={USER_DB};Version=3;");
+        bool isNewDatabase = !File.Exists(GetDB());
 
         if (isNewDatabase)
         {
-            connection.Open();
-            CreateTables(connection);
-            InsertDefaultUser(connection);
-            connection.Close();
+            GetConnection().Open();
+            CreateTables();
+            InsertUser("desk","1234","Jean","Didier",Role.ROLE_DESK);
+            InsertUser("fabrication","1234","Jean","Dupont",Role.ROLE_FABRICATION);
+            GetConnection().Close();
         }
     }
 
-    private void CreateTables(SQLiteConnection connection)
+    private void CreateTables()
     {
-        SQLiteCommand command = connection.CreateCommand();
+        SQLiteCommand command = GetConnection().CreateCommand();
 
         command.CommandText = @"
          CREATE TABLE IF NOT EXISTS [User] (
@@ -28,23 +29,25 @@ public class DatabaseHelper
               Username TEXT UNIQUE,
               Password TEXT,
               Name TEXT,
-              LastName TEXT
+              LastName TEXT,
+              role TEXT
          );
      ";
         command.ExecuteNonQuery();
     }
     
-    private void InsertDefaultUser(SQLiteConnection connection)
+    private void InsertUser(string username, string password, string name, string lastName, string role)
     {
-        SQLiteCommand command = connection.CreateCommand();
+        SQLiteCommand command = GetConnection().CreateCommand();
         command.CommandText = @"
-         INSERT INTO [User] (Username, Password, Name, LastName)
-          VALUES (@username, @password, @name, @lastName);
-     ";
-        command.Parameters.AddWithValue("@username", "admin");
-        command.Parameters.AddWithValue("@password", "admin123");
-        command.Parameters.AddWithValue("@name", "Admin");
-        command.Parameters.AddWithValue("@lastName", "User");
+        INSERT INTO [User] (Username, Password, Name, LastName, Role)
+        VALUES (@username, @password, @name, @lastName, @role);
+    ";
+        command.Parameters.AddWithValue("@username", username);
+        command.Parameters.AddWithValue("@password", password);
+        command.Parameters.AddWithValue("@name", name);
+        command.Parameters.AddWithValue("@lastName", lastName);
+        command.Parameters.AddWithValue("@role", role);
         command.ExecuteNonQuery();
     }
     
