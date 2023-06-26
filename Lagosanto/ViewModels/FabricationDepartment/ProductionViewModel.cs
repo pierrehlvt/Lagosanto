@@ -1,5 +1,6 @@
 using System.Windows;
 using System.Windows.Input;
+using Lagosanto.Services;
 
 namespace Lagosanto.ViewModels.FabricationDepartment;
 
@@ -56,6 +57,6 @@ public class ProductionViewModel: ViewModelBase
 
     private void ExecuteProductionCommand(object obj)
     {
-        MessageBox.Show("Quantité : "+Quantity+" Recette : "+RecipeId, "Alerte", MessageBoxButton.OK, MessageBoxImage.Warning);
+        ProductionService.LaunchProduction(RecipeId,Quantity);
     }
 }

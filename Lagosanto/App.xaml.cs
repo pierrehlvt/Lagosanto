@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using Lagosanto.Services;
 using Lagosanto.ViewModels;
 using Lagosanto.ViewModels.DeskDepartment;
 using Lagosanto.ViewModels.FabricationDepartment;
@@ -16,9 +17,7 @@ namespace Lagosanto
         private void ApplicationStart(object sender, StartupEventArgs e)
         {
             
-             var loginView = new LoginWindowView();
-             DatabaseHelper databaseHelper = new DatabaseHelper();
-             
+             LoginWindowView loginView = new LoginWindowView();
              loginView.Show();
              loginView.IsVisibleChanged += (_, _) =>
              {
@@ -46,6 +45,7 @@ namespace Lagosanto
         private ServiceProvider DependencyInjection()
         {
             var services = new ServiceCollection();
+            services.AddSingleton<ProductionService>();
             services.AddSingleton<LoginWindowView>();
             services.AddSingleton<AddRecipeViewModel>();
             services.AddSingleton<RecipeViewModel>();

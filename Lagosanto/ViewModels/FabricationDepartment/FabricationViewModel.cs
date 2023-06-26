@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
 using FontAwesome.Sharp;
+using Lagosanto.Services;
 
 namespace Lagosanto.ViewModels.FabricationDepartment;
 
@@ -53,7 +54,6 @@ public class FabricationViewModel: ViewModelBase
 
     public FabricationViewModel()
     {
-        _currentChildViewModel = new ProductionViewModel();
         ShowProductionViewCommand = new ViewModelCommand(ExecuteShowProductionViewCommand);
         ExecuteShowProductionViewCommand(null!);
     }
