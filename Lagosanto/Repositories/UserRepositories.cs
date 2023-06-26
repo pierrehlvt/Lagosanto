@@ -11,13 +11,9 @@ namespace Lagosanto.Repositories;
 
     public class UserRepository : DatabaseBase,IUserRepository
     {
-
-        private readonly DatabaseHelper _databaseHelper;
         private SQLiteCommand _command;
-
         public UserRepository()
         {
-            _databaseHelper = new DatabaseHelper();
             _command = new SQLiteCommand(GetConnection());
         }
         public void Add(User userModel)

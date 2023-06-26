@@ -17,7 +17,7 @@ public class DatabaseBase
         return _connection;
     }
 
-    public string GetDB()
+    public string GetDbName()
     {
         return USER_DB;
     }

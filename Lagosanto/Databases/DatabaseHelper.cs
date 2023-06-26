@@ -7,14 +7,29 @@ public class DatabaseHelper: DatabaseBase
 {
     public DatabaseHelper()
     {
-        bool isNewDatabase = !File.Exists(GetDB());
+        bool isNewDatabase = !File.Exists(GetDbName());
 
         if (isNewDatabase)
         {
             GetConnection().Open();
             CreateTables();
-            InsertUser("desk","1234","Jean","Didier",Role.ROLE_DESK);
-            InsertUser("fabrication","1234","Jean","Dupont",Role.ROLE_FABRICATION);
+            
+            User desk = new User();
+            desk.Username = "desk";
+            desk.Password = "1234";
+            desk.LastName = "Didier";
+            desk.Name = "Jean";
+            desk.Role = Role.ROLE_DESK;
+            
+            User fabrication = new User();
+            fabrication.Username = "fabrication";
+            desk.Password = "1234";
+            desk.LastName = "Dupont";
+            desk.Name = "Pierre";
+            desk.Role = Role.ROLE_FABRICATION;
+            
+            InsertUser(desk);
+            InsertUser(fabrication);
             GetConnection().Close();
         }
     }
@@ -31,23 +46,23 @@ public class DatabaseHelper: DatabaseBase
               Name TEXT,
               LastName TEXT,
               role TEXT
-         );
-     ";
+         );";
+        
         command.ExecuteNonQuery();
     }
     
-    private void InsertUser(string username, string password, string name, string lastName, string role)
+    private void InsertUser(User user)
     {
         SQLiteCommand command = GetConnection().CreateCommand();
         command.CommandText = @"
         INSERT INTO [User] (Username, Password, Name, LastName, Role)
         VALUES (@username, @password, @name, @lastName, @role);
     ";
-        command.Parameters.AddWithValue("@username", username);
-        command.Parameters.AddWithValue("@password", password);
-        command.Parameters.AddWithValue("@name", name);
-        command.Parameters.AddWithValue("@lastName", lastName);
-        command.Parameters.AddWithValue("@role", role);
+        command.Parameters.AddWithValue("@username", user.Username);
+        command.Parameters.AddWithValue("@password", user.Password);
+        command.Parameters.AddWithValue("@name", user.Name);
+        command.Parameters.AddWithValue("@lastName", user.LastName);
+        command.Parameters.AddWithValue("@role", user.Role);
         command.ExecuteNonQuery();
     }
     
