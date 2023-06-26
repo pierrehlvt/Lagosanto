@@ -73,8 +73,6 @@
                     <StackPanel Grid.Column="1" Orientation="Horizontal" 
                                 FlowDirection="RightToLeft"
                                 VerticalAlignment="Center" Margin="0,0,10,0">
-                        <TextBlock Text="Nom utilisateur" FontSize="16" VerticalAlignment="Center"
-                                   FontWeight="Bold"/>    
                     </StackPanel>
                 </Grid>
                 <ContentControl Content="{Binding CurrentChildViewModel}"

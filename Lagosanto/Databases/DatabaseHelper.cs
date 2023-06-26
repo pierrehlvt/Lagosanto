@@ -17,14 +17,14 @@ public class DatabaseHelper: DatabaseBase
             desk.Username = "desk";
             desk.Password = "1234";
             desk.LastName = "Dupont";
-            desk.Name = "Pierre";
+            desk.Name = "Didier";
             desk.Role = Role.ROLE_DESK;
             
             User fabrication = new User();
             fabrication.Username = "fabrication";
             fabrication.Password = "1234";
-            fabrication.LastName = "Dupont";
-            fabrication.Name = "Pierre";
+            fabrication.LastName = "Neymar";
+            fabrication.Name = "Jean";
             fabrication.Role = Role.ROLE_FABRICATION;
             
             InsertUser(desk);

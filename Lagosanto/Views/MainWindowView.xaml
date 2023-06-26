@@ -72,5 +72,16 @@
                 <fa:IconImage Icon="WindowMinimize" Style="{StaticResource controlButtonIcon}"></fa:IconImage>
             </Button>
         </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Margin="0,40,20,0"  Orientation="Horizontal">
+            <TextBlock Text="{Binding User.Name}" 
+                       FontSize="15" FontWeight="SemiBold"
+                       Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding User.LastName}"
+                       HorizontalAlignment="Right"
+                       FontSize="15" FontWeight="SemiBold"
+                          Margin="0,0,10,0"
+                        />
+        </StackPanel>
+
     </Grid>
 </Window>

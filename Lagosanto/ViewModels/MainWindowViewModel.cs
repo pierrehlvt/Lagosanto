@@ -13,7 +13,21 @@ public class MainWindowViewModel: ViewModelBase
     private ViewModelBase _currentViewModel = null!;
     private User _user;
     private IUserRepository _userRepository;
-    
+
+
+    public User User
+    {
+        get
+        {
+            return _user;
+        }
+        set
+        {
+            _user = value;
+            OnPropertyChanged(nameof(User));
+        }
+    }
+
     public ViewModelBase CurrentViewModel
     {
         get
@@ -36,6 +50,7 @@ public class MainWindowViewModel: ViewModelBase
     protected void ChangeViewModelDependingOnRole()
     {
         User user = _userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
+        User = user;
 
         if (user.Role == Role.ROLE_DESK)
         {
