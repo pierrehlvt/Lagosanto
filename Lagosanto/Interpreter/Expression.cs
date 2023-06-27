@@ -1,6 +1,8 @@
-﻿namespace Lagosanto.Models;
+﻿using Lagosanto.Interpreter.Interfaces;
 
-abstract class Expression
+namespace Lagosanto.Interpreter;
+
+public abstract class Expression :IExpression
 {
-    public abstract string Interpreter(Context context);
+    public abstract void Interpret(Context context);
 }

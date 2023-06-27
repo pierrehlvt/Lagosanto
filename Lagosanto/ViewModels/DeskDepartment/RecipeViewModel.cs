@@ -37,13 +37,6 @@ public class RecipeViewModel : ViewModelBase
 
     private void ExecuteLoadRecipeCommand(object obj)
     {
-        RecipeExpression recetteExpression = new RecipeExpression(2, 2, null, null);
-
-        // Interprétation de la recette
-        Context context = new Context();
-        Interpreter interpreter = new Interpreter(recetteExpression);
-        string recette = interpreter.Interpret(context);
-
-        Console.WriteLine(recette);
+        
     }
 }

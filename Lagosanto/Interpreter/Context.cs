@@ -1,26 +1,22 @@
 ﻿using System.Collections.Generic;
 
-namespace Lagosanto.Models;
+namespace Lagosanto.Interpreter;
 
-class Context
+public class Context
 {
-    private Dictionary<int, string> composants;
+    public string ArticleType { get; set; }
+    public string CategoryType { get; set; }
+    public string OperationType { get; set; }
+    public List<string> Articles { get; } = new List<string>();
+    public List<(string, int)> ArticleQuantities { get; } = new List<(string, int)>();
 
-    public Context()
+    public void AddArticle(string codeArticle)
     {
-        composants = new Dictionary<int, string>
-        {
-            { 34, "Composant A" },
-            // Ajouter d'autres composants si nécessaire
-        };
+        Articles.Add(codeArticle);
     }
 
-    public string GetComposant(int idComposant)
+    public void AddArticleQuantity(string codeArticle, int quantity)
     {
-        if (composants.ContainsKey(idComposant))
-        {
-            return composants[idComposant];
-        }
-        return null;
+        ArticleQuantities.Add((codeArticle, quantity));
     }
 }

@@ -5,6 +5,42 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Lagosanto.Views.DeskDepartment"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
-        <TextBlock Text="FORMULAIRE RECETTE"></TextBlock>
+             >
+    <Grid>
+        <StackPanel>
+
+        <TextBox x:Name="InputNewRecipe"
+                 Text="{Binding Recipe, UpdateSourceTrigger=PropertyChanged}"
+                 FontSize="13"
+                 FontWeight="Medium"
+                 FontFamily="Montserrat"                            
+                 BorderThickness="0,0,0,2"
+                 Height="28"
+                 VerticalContentAlignment="Center"
+                 Margin="0,5,0,25"
+                 Padding="35,0,0,0">
+        </TextBox>
+        
+        <Button x:Name="InputAddCodeArticle"                         
+                BorderThickness="0"
+                Content="Ajouter le code article"
+                FontSize="12"
+                Foreground="White"
+                FontFamily="Montserrat"
+                Cursor="Hand"                           
+                Margin="0,50,0,0"
+                Command="{Binding AddCodeArticleCommand}">
+        </Button>
+        <Button x:Name="InputLaunchNewRecipe"                         
+                BorderThickness="0"
+                Content="Créer la recette"
+                FontSize="12"
+                Foreground="White"
+                FontFamily="Montserrat"
+                Cursor="Hand"                           
+                Margin="0,50,0,0"
+                Command="{Binding AddRecipeCommand}">
+            </Button>
+            </StackPanel>
+        </Grid>
 </UserControl>
