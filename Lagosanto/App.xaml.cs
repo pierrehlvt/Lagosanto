@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows;
 using Lagosanto.Interpreter;
-using Lagosanto.Services;
+using Lagosanto.Interpreter.Interfaces;
+using Lagosanto.Interpreter.Parser;
 using Lagosanto.ViewModels;
 using Lagosanto.ViewModels.DeskDepartment;
 using Lagosanto.ViewModels.FabricationDepartment;
@@ -22,18 +22,12 @@ namespace Lagosanto
              LoginWindowView loginView = new LoginWindowView();
              DatabaseHelper databaseHelper = new DatabaseHelper();
              
-             InterpreterClient client = new InterpreterClient();
-             client.ProcessInput("AT1(A003)CT(C084)CO(O05)ARTS[CP1(P279729033,4),CP2()]&AT2(A001)CT(C084)CO(O02)ARTS[CP1(A003,2),CP2(P815021753,3)]");
+             IExpression expression = Parser.Parse("ART(DTS(A003,C084,O05),CPS(P279729033,4))");
 
-             Context context = client.Context;
+             Context context = new Context();
+             expression.Interpreter(context);
+             Console.WriteLine(expression + " = " + context);
 
-             string articleCode = context.ArticleType;
-             string categoryType = context.CategoryType;
-             string operationType = context.OperationType;
-             List<string> articles = context.Articles;
-             List<(string, int)> articleQuantities = context.ArticleQuantities;
-             
-             
              loginView.Show();
              loginView.IsVisibleChanged += (_, _) =>
              {

@@ -1,22 +1,20 @@
 ﻿using System.Collections.Generic;
+using Lagosanto.Models;
 
 namespace Lagosanto.Interpreter;
 
 public class Context
 {
-    public string ArticleType { get; set; }
-    public string CategoryType { get; set; }
-    public string OperationType { get; set; }
-    public List<string> Articles { get; } = new List<string>();
-    public List<(string, int)> ArticleQuantities { get; } = new List<(string, int)>();
-
-    public void AddArticle(string codeArticle)
+    public NewArticle NewArticle { get; set; }
+    
+    public Context()
     {
-        Articles.Add(codeArticle);
+        NewArticle = new NewArticle();
+    }
+    
+    public override string ToString()
+    {
+        return NewArticle.ToString();
     }
 
-    public void AddArticleQuantity(string codeArticle, int quantity)
-    {
-        ArticleQuantities.Add((codeArticle, quantity));
-    }
 }

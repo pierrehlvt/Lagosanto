@@ -1,11 +1,10 @@
 ﻿using System;
-using Lagosanto.Interpreter.ChainOfResponsability;
 using Lagosanto.Interpreter.Interfaces;
+using Lagosanto.Interpreter.Parser.ChainOfResponsability;
 
 namespace Lagosanto.Interpreter.Parser;
 
-public class Parser
-{
+public abstract class Parser {
     public const char OpenCharacter = '(';
     public const char CloseCharacter = ')';
     public const char SeparatorCharacter = ',';

@@ -1,18 +1,19 @@
 ﻿using Lagosanto.Interpreter.Interfaces;
+using Lagosanto.Models;
 
 namespace Lagosanto.Interpreter;
 
-public abstract class ArticleExpression : BinaryExpression 
-{
-    public ArticleExpression(IExpression left, IExpression right) : base(left, right) {
+public class ArticleExpression : BinaryExpression {
+    public ArticleExpression(IExpression left,IExpression right ) : base(left,right) {
+            
     }
 
-    public void Interpreter(Context context) {
+    public override void Interpreter(Context context) {
         Context leftContext = new Context();
         Context rightContext = new Context();
-
-        Left.Interpret(leftContext);
-        Right.Interpret(rightContext);
+        
+        Left.Interpreter(leftContext);
+        Right.Interpreter(rightContext);
 
     }
 }

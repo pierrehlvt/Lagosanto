@@ -2,7 +2,7 @@
 
 namespace Lagosanto.Interpreter;
 
-public abstract class Expression :IExpression
-{
-    public abstract void Interpret(Context context);
+public abstract class Expression :IExpression { 
+    public abstract void Interpreter(Context context);
+    
 }

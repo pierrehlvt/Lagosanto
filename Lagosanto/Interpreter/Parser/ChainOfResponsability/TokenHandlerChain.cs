@@ -1,10 +1,8 @@
 ﻿using Lagosanto.Interpreter.Interfaces;
-using Lagosanto.Interpreter.Parser;
 
-namespace Lagosanto.Interpreter.ChainOfResponsability;
+namespace Lagosanto.Interpreter.Parser.ChainOfResponsability;
 
-public class TokenHandlerChain: TokenHandler
-{
+public class TokenHandlerChain : TokenHandler {
     private static TokenHandlerChain _instance = null;
     public static TokenHandlerChain Instance {
         get {
@@ -17,7 +15,10 @@ public class TokenHandlerChain: TokenHandler
 
     private TokenHandlerChain() : base() {
         TokenHandler last = this;
-      //  last = TokenHandlerChain.AddNext(last, new AndTokenHandler());
+        last = TokenHandlerChain.AddNext(last, new ArticleTokenHandler());
+        last = TokenHandlerChain.AddNext(last, new DetailsTokenHandler());
+        last = TokenHandlerChain.AddNext(last, new ComponentTokenHandler());
+        last = TokenHandlerChain.AddNext(last, new NewArticleTokenHandler());
     }
 
     private static TokenHandler AddNext(TokenHandler current, TokenHandler next) {
