@@ -5,8 +5,10 @@ using Lagosanto.Models;
 
 public class DatabaseHelper: DatabaseBase
 {
+    
     public DatabaseHelper()
     {
+        
         bool isNewDatabase = !File.Exists(GetDbName());
 
         if (isNewDatabase)

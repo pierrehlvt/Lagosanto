@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Windows;
-using Lagosanto.Services;
 using Lagosanto.ViewModels;
-using Lagosanto.ViewModels.DeskDepartment;
-using Lagosanto.ViewModels.FabricationDepartment;
 using Lagosanto.Views;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +15,7 @@ namespace Lagosanto
         {
             
              LoginWindowView loginView = new LoginWindowView();
+             ServiceProvider serviceProvider = DependencyInjection();
              DatabaseHelper databaseHelper = new DatabaseHelper();
              loginView.Show();
              loginView.IsVisibleChanged += (_, _) =>
@@ -28,7 +26,7 @@ namespace Lagosanto
                          Dispatcher.BeginInvoke(new Action(() =>
                          {
                              Window mainView = new MainWindowView();
-                             mainView.DataContext = DependencyInjection().GetRequiredService<MainWindowViewModel>();
+                             mainView.DataContext = serviceProvider.GetRequiredService<MainWindowViewModel>();
                              mainView.Show();
                              loginView.Close();
                          }));
@@ -45,16 +43,9 @@ namespace Lagosanto
 
         private ServiceProvider DependencyInjection()
         {
-            var services = new ServiceCollection();
-            services.AddSingleton<LoginWindowView>();
-            services.AddSingleton<AddRecipeViewModel>();
-            services.AddSingleton<RecipeViewModel>();
-            services.AddSingleton<AddRecipeViewModel>();
-            services.AddSingleton<FabricationViewModel>();
-            services.AddSingleton<ProductionViewModel>();
-            services.AddSingleton<MainWindowViewModel>();
-            var serviceProvider = services.BuildServiceProvider();
-            return serviceProvider; 
+            ServiceCollection services = new ServiceCollection();
+            services.AddScoped<MainWindowViewModel>();
+            return services.BuildServiceProvider();
         }
         
     }
