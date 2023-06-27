@@ -3,19 +3,15 @@ using FontAwesome.Sharp;
 
 namespace Lagosanto.ViewModels.DeskDepartment;
 
-public class DeskViewModel: ViewModelBase
+public class DeskViewModel : ViewModelBase
 {
-    
     private ViewModelBase _currentChildViewModel = null!;
     private string _caption = null!;
     private IconChar _iconChar;
-    
+
     public string Caption
     {
-        get
-        {
-            return _caption;
-        }
+        get { return _caption; }
         set
         {
             _caption = value;
@@ -25,40 +21,33 @@ public class DeskViewModel: ViewModelBase
 
     public IconChar IconChar
     {
-        get
-        {
-            return _iconChar;
-        }
+        get { return _iconChar; }
         set
         {
             _iconChar = value;
             OnPropertyChanged(nameof(IconChar));
         }
     }
-    
-    
+
+
     public ViewModelBase CurrentChildViewModel
     {
-        get
-        {
-            return _currentChildViewModel;
-        }
+        get { return _currentChildViewModel; }
         set
         {
             _currentChildViewModel = value;
             OnPropertyChanged(nameof(CurrentChildViewModel));
         }
     }
-    
-    public ICommand ShowAddRecipeViewCommand { get;}
-    public ICommand ShowRecipeViewCommand { get;}
+
+    public ICommand ShowAddRecipeViewCommand { get; }
+    public ICommand ShowRecipeViewCommand { get; }
 
     public DeskViewModel()
     {
         ShowAddRecipeViewCommand = new ViewModelCommand(ExecuteShowAddRecipeViewCommand);
         ShowRecipeViewCommand = new ViewModelCommand(ExecuteShowRecipeViewCommand);
         ExecuteShowRecipeViewCommand(null!);
-        
     }
 
     private void ExecuteShowRecipeViewCommand(object obj)

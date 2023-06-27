@@ -1,6 +1,8 @@
-﻿namespace Lagosanto.ViewModels.DeskDepartment;
+﻿using System.ComponentModel;
 
-public class AddRecipeViewModel: ViewModelBase
+namespace Lagosanto.ViewModels.DeskDepartment;
+
+public class AddRecipeViewModel : ViewModelBase
 {
-    
+   
 }
