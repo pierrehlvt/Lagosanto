@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Input;
 using Lagosanto.Interpreter;
 using Lagosanto.Views.DeskDepartment;
@@ -26,7 +27,7 @@ public class AddRecipeViewModel : ViewModelBase
 
     public AddRecipeViewModel()
     {
-        AddRecipeCommand = new ViewModelCommand(ExecuteAddRecipeCommand);
+        AddRecipeCommand = new ViewModelCommand(ExecuteAddRecipeCommand,CanExecuteAddRecipeCommand);
         AddCodeArticleCommand = new ViewModelCommand(ExecuteAddCodeArticleCommand);
     }
     
@@ -35,13 +36,17 @@ public class AddRecipeViewModel : ViewModelBase
         CodeArticleView codeArticleWindow = new CodeArticleView();
         CodeArticleViewModel codeArticleWindowViewModel = new CodeArticleViewModel();
         codeArticleWindow.DataContext = codeArticleWindowViewModel;
+        Recipe += codeArticleWindow.ShowDialog()==false ? codeArticleWindowViewModel.CodeArticle : "";
         
-        Recipe += codeArticleWindow.ShowDialog() == true ? codeArticleWindowViewModel.CodeArticle : "";
     }
     
     private void ExecuteAddRecipeCommand(object obj)
     {
-
         
+    }
+    
+    private bool CanExecuteAddRecipeCommand(object obj)
+    {
+        return false;
     }
 }

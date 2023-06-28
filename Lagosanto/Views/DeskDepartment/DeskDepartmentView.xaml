@@ -40,14 +40,14 @@
                                    Foreground="{StaticResource Color11}" FontSize="15">
                         </TextBlock>
                     </StackPanel>
-                    <RadioButton Style="{StaticResource menuButton}" IsChecked="true"
+                    <!--<RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource Color11}" Command="{Binding ShowRecipeViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="MagnifyingGlass" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock VerticalAlignment="Center" Text="Recettes" Style="{StaticResource menuButtonText}"></TextBlock>
                         </StackPanel>
-                    </RadioButton>
-                    <RadioButton Style="{StaticResource menuButton}"
+                    </RadioButton>-->
+                    <RadioButton Style="{StaticResource menuButton}" IsChecked="true"
                                  Tag="{StaticResource Color11}" Command="{Binding ShowAddRecipeViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Plus" Style="{StaticResource menuButtonIcon}"/>

@@ -23,6 +23,9 @@
     </Window.DataContext>
     
     <Window.Resources>
+        <DataTemplate DataType="{x:Type viewDeskModel:CodeArticleViewModel}">
+            <viewDeskDepartment:CodeArticleView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewDeskModel:DeskViewModel}">
             <local:DeskDepartmentView/>
         </DataTemplate>

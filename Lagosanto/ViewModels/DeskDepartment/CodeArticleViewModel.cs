@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Lagosanto.ViewModels.DeskDepartment;
@@ -22,11 +23,30 @@ public class CodeArticleViewModel:ViewModelBase
 
     public CodeArticleViewModel()
     {
-        AddCodeArticleCommand = new ViewModelCommand(ExecuteAddCodeArticleCommand);
+        AddCodeArticleCommand = new ViewModelCommand(ExecuteAddCodeArticleCommand,CanExecuteAddCodeArticleCommand);
     }
     private void ExecuteAddCodeArticleCommand(object obj)
     {
-        MessageBox.Show(CodeArticle,"",MessageBoxButton.OK,MessageBoxImage.Information);
+
+        CodeArticle = "ART(DTS("+CodeArticle+",";
+        Application.Current.MainWindow.Close();
+    }
+    
+    private bool CanExecuteAddCodeArticleCommand(object obj)
+    {
+        if (CodeArticle.Length < 1)
+        {
+            return false;
+        }
+        
+        string pattern = @"^[^\W_]{4}$";
+        
+        if (!Regex.IsMatch(CodeArticle, pattern))
+        {
+            return false;
+        }
+        
+        return true;
     }
     
 }
