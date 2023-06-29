@@ -21,14 +21,7 @@ namespace Lagosanto
             
              LoginWindowView loginView = new LoginWindowView();
              DatabaseHelper databaseHelper = new DatabaseHelper();
-             
-             IExpression expression = Parser.Parse("ART(DTS((A003,C084,O05)),CPS((P279729033,C087,4,null,null,null)))");
 
-             Context context = new Context();
-             expression.Interpreter(context);
-             Console.WriteLine(expression + " = " + context);
-
-             
              loginView.Show();
              loginView.IsVisibleChanged += (_, _) =>
              {

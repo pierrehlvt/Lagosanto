@@ -1,15 +1,35 @@
-﻿using System.Diagnostics;
-using System.Windows;
+﻿using System;
+using System.Diagnostics;
 
 namespace Lagosanto.Services;
 
-abstract class ProductionService
+public class ProductionService
 {
-    public static void LaunchProduction(int RecipeId, int Quantity)
+    public void LaunchProduction(int RecipeId, int Quantity)
     {
-        Process process = new Process();
-        process.StartInfo.FileName = "<application or file>";
-        process.StartInfo.Arguments = "production "+RecipeId+" "+Quantity;
-        process.Start();
+        RunJarFile(RecipeId, Quantity);
     }
+    
+    public void RunJarFile(int RecipeId, int Quantity)
+    {
+        ProcessStartInfo startInfo = new ProcessStartInfo
+        {
+            FileName = "java",
+            Arguments = "-jar NFS_4BCI_ALGORYTHME-1.0-SNAPSHOT.jar" + " " + RecipeId + " " + Quantity,
+            RedirectStandardOutput = true, 
+            UseShellExecute = false, 
+            CreateNoWindow = false,
+        };
+        
+        using (Process process = Process.Start(startInfo))
+        {
+            while (!process.StandardOutput.EndOfStream)
+            {
+                string line = process.StandardOutput.ReadLine();
+            }
+
+            process.WaitForExit();
+        }
+    }
+
 }

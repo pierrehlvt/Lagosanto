@@ -6,6 +6,7 @@ namespace Lagosanto.ViewModels.FabricationDepartment;
 
 public class ProductionViewModel: ViewModelBase
 {
+    private ProductionService _productionService;
     private int _recipeId { get; set; }
     
     private int _quantity { get; set; }
@@ -41,6 +42,7 @@ public class ProductionViewModel: ViewModelBase
     public ProductionViewModel()
     {
         LoadProductionCommand = new ViewModelCommand(ExecuteProductionCommand,CanProductionCommand);
+        _productionService = new ProductionService();
     }
 
     private bool CanProductionCommand(object obj)
@@ -57,6 +59,6 @@ public class ProductionViewModel: ViewModelBase
 
     private void ExecuteProductionCommand(object obj)
     {
-        ProductionService.LaunchProduction(RecipeId,Quantity);
+        _productionService.LaunchProduction(RecipeId,Quantity);
     }
 }
