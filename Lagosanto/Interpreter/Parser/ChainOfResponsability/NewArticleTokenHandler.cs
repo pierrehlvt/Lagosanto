@@ -11,18 +11,20 @@ public class NewArticleTokenHandler : TokenHandler
     {
         if (treeText.Token.Equals("", StringComparison.InvariantCultureIgnoreCase))
         {
-            if (treeText.CountChildren == 4)
+            if (treeText.CountChildren == 3)
             {
 
                 NewArticle newArticle = new()
                 {
-                    codeArticle = treeText.GetChild(0).Element,
-                    category = treeText.GetChild(1).Element,
-                    codeOperation = treeText.GetChild(2).Element,
-                    components = new List<Component>()
+                    _details = new Details()
+                    {
+                        
+                    },
+                    _components = new Component()
+                    {
+                    }
                 };
                 
-                int test = 0;
                 return new NewArticleExpression(newArticle);
             }
         }

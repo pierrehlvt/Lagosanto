@@ -6,7 +6,7 @@ namespace Lagosanto.Interpreter.Parser.ChainOfResponsability;
 public class ComponentTokenHandler : TokenHandler {
     public override IExpression Execute(IExpression expression, ParserTreeText treeText) {
         if (treeText.Token.Equals("CPS", StringComparison.InvariantCultureIgnoreCase)) {
-            if (treeText.CountChildren == 2) {
+            if (treeText.CountChildren == 4) {
                 return new ComponentExpression(TokenHandlerChain.Instance.Execute(expression, new ParserTreeText(treeText.GetChild(0))), 
                     TokenHandlerChain.Instance.Execute(expression, new ParserTreeText(treeText.GetChild(1))));
             }

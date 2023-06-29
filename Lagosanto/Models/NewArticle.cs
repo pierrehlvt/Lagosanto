@@ -5,42 +5,19 @@ namespace Lagosanto.Models;
 
 public class NewArticle:ICloneable
 {
-    public NewArticle Data { get; set; } = new NewArticle("","","",new List<Component>());
+    public NewArticle Data { get; set; } = new NewArticle(new Details(),new Component());
 
-    public string codeArticle { get; set; }
-    public string category { get; set; }
-    public string codeOperation { get; set; }
-    public List<Component> components { get; set; }
+    public Details _details;
+    public Component _components;
     
-    public void setCodeArticle(string codeArticle)
+    public NewArticle() : this(new Details(),new Component()) { }
+    public NewArticle(Details detail, Component component)
     {
-        Data.codeArticle = codeArticle;
-    }
-    
-    public void setCategory(string category)
-    {
-        Data.category = category;
-    }
-    
-    public void setCodeOperation(string codeOperation)
-    {
-        Data.codeOperation = codeOperation;
-    }
-    
-    public void setComponents(List<Component> components)
-    {
-        Data.components = components;
-    }
-    public NewArticle() : this("","","",new List<Component>()) { }
-    public NewArticle(string codeArticle, string category, string codeOperation, List<Component> components)
-    {
-        this.codeArticle = codeArticle;
-        this.category = category;
-        this.codeOperation = codeOperation;
-        this.components = components;
+        this._details = detail;
+        this._components = component;
     }
     public object Clone()
     {
-        return new NewArticle(Data.codeArticle, Data.category, Data.codeOperation, Data.components);
+        return new NewArticle(Data._details, Data._components);
     }
 }

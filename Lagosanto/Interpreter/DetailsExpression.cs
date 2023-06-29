@@ -17,9 +17,9 @@ public class DetailsExpression : TernaryExpression {
         Middle.Interpreter(middleContext);
         Right.Interpreter(rightContext);
         
-        context.NewArticle.codeArticle = leftContext.NewArticle.codeArticle;
-        context.NewArticle.category = middleContext.NewArticle.category;
-        context.NewArticle.codeOperation = rightContext.NewArticle.codeOperation;
+        context.NewArticle._details.codeArticle = leftContext.NewArticle._details.codeArticle;
+        context.NewArticle._details.category = middleContext.NewArticle._details.category;
+        context.NewArticle._details.operation = rightContext.NewArticle._details.operation;
 
     }
 }

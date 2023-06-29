@@ -13,13 +13,6 @@ public class ComponentExpression : BinaryExpression {
 
         Left.Interpreter(leftContext);
         Right.Interpreter(rightContext);
-
-        var component = new Component()
-        {
-            codeArticle = leftContext.NewArticle.codeArticle,
-            quantity = rightContext.NewArticle.components[0].quantity
-        };
-            
-        context.NewArticle.components.Add(component);
+        
     }
 }

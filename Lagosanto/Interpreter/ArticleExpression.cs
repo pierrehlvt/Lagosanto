@@ -14,6 +14,9 @@ public class ArticleExpression : BinaryExpression {
         
         Left.Interpreter(leftContext);
         Right.Interpreter(rightContext);
+        
+        context.NewArticle._details = leftContext.NewArticle._details;
+        context.NewArticle._components = rightContext.NewArticle._components;
 
     }
 }
