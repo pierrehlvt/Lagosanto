@@ -1,4 +1,5 @@
-﻿using Lagosanto.Interpreter.Interfaces;
+﻿using DP_NFS.parser.ChainOfResponsability;
+using Lagosanto.Interpreter.Interfaces;
 
 namespace Lagosanto.Interpreter.Parser.ChainOfResponsability;
 
@@ -19,6 +20,7 @@ public class TokenHandlerChain : TokenHandler {
         last = TokenHandlerChain.AddNext(last, new DetailsTokenHandler());
         last = TokenHandlerChain.AddNext(last, new ComponentTokenHandler());
         last = TokenHandlerChain.AddNext(last, new NewArticleTokenHandler());
+        last = TokenHandlerChain.AddNext(last, new ErrorTokenHandler());
     }
 
     private static TokenHandler AddNext(TokenHandler current, TokenHandler next) {

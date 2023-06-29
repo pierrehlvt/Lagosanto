@@ -6,7 +6,8 @@ namespace Lagosanto.Interpreter.Parser;
 public class ParserTreeText {
     public TreeNode<String> TreeText { get; set; }
     public String Token { get => this.TreeText.Element; }
-    public int CountChildren { get => this.TreeText.Children.Count; }
+    public int CountChildren { get => this
+    .TreeText.Children.Count; }
 
     public ParserTreeText(String text) {
         this.TreeText = ParserTreeText.TextToTree(text);
