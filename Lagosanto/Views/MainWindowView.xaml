@@ -41,10 +41,14 @@
         <DataTemplate DataType="{x:Type viewFabricationModel:ProductionViewModel}">
             <viewFabricationDepartment:ProductionView/>
         </DataTemplate>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
     
     <Grid>
         <ContentControl  Content="{Binding CurrentViewModel}"  />
+        
+
+        
         <Border BorderThickness="1" CornerRadius="10">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">

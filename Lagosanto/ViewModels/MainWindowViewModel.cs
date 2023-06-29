@@ -3,6 +3,7 @@ using System.Threading;
 using Lagosanto.Models;
 using Lagosanto.Repositories;
 using Lagosanto.Repositories.Interfaces;
+using Lagosanto.Services;
 using Lagosanto.ViewModels.DeskDepartment;
 using Lagosanto.ViewModels.FabricationDepartment;
 
@@ -13,7 +14,6 @@ public class MainWindowViewModel: ViewModelBase
     private ViewModelBase _currentViewModel = null!;
     private User _user;
     private IUserRepository _userRepository;
-
 
     public User User
     {
@@ -45,6 +45,7 @@ public class MainWindowViewModel: ViewModelBase
     {
         _userRepository = new UserRepository();
         ChangeViewModelDependingOnRole();
+        ProductionService productionService = new ProductionService();
     }
     
     protected void ChangeViewModelDependingOnRole()

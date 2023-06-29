@@ -8,6 +8,11 @@
              mc:Ignorable="d"
              xmlns:viewProductionViewModel="clr-namespace:Lagosanto.ViewModels.FabricationDepartment"
              d:DesignHeight="300" d:DesignWidth="300">
+    
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
+    
     <Grid>
         <StackPanel Width="250" Orientation="Vertical" Margin="0,50,0,25">
             <TextBlock Text="Recette" FontFamily="Arial" FontSize="15" ></TextBlock>
@@ -63,5 +68,46 @@
                 </Button.Template>
             </Button>
         </StackPanel>
+        <ProgressBar Name="Loader" 
+                     Width="100" Height="100" 
+                     IsIndeterminate="True" 
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Center"
+                     Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}, UpdateSourceTrigger=PropertyChanged}" >
+            <ProgressBar.Template>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid>
+                        <Ellipse Stroke="#FF3C3C3C" StrokeThickness="5"/>
+                        <Ellipse StrokeThickness="5" Margin="10">
+                            <Ellipse.Stroke>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#00FFFFFF" Offset="1"/>
+                                    <GradientStop Color="#FF007ACC" Offset="0.75"/>
+                                </RadialGradientBrush>
+                            </Ellipse.Stroke>
+                            <Ellipse.RenderTransform>
+                                <RotateTransform x:Name="AnimatedRotateTransform" CenterX="0.5" CenterY="0.5"/>
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Triggers>
+                                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="AnimatedRotateTransform"
+                                                             Storyboard.TargetProperty="Angle"
+                                                             From="0"
+                                                             To="360"
+                                                             Duration="0:0:1"
+                                                             RepeatBehavior="Forever"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Ellipse.Triggers>
+                        </Ellipse>
+                    </Grid>
+                </ControlTemplate>
+            </ProgressBar.Template>
+        </ProgressBar>
+
+
     </Grid>
 </UserControl>

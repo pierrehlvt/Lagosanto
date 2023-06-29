@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 using Lagosanto.Services;
@@ -37,6 +39,17 @@ public class ProductionViewModel: ViewModelBase
         }
     }
     
+    private bool _isBusy;
+    public bool IsBusy
+    {
+        get { return _isBusy; }
+        set 
+        { 
+            _isBusy = value; 
+            OnPropertyChanged(nameof(IsBusy)); 
+        }
+    }
+    
     public ICommand LoadProductionCommand { get;}
     
     public ProductionViewModel()
@@ -59,6 +72,19 @@ public class ProductionViewModel: ViewModelBase
 
     private void ExecuteProductionCommand(object obj)
     {
-        _productionService.LaunchProduction(RecipeId,Quantity);
+        IsBusy = true;
+        
+        List<String> returns = _productionService.LaunchProduction(RecipeId, Quantity);
+
+        if (returns.Count > 0)
+        {
+            MessageBox.Show(returns[0] + " " + returns[1], "Succes creation article "+RecipeId, MessageBoxButton.OK, MessageBoxImage.Information);
+            IsBusy = false;
+        }
+        else
+        {
+            MessageBox.Show("Veuillez relancer la production", "Erreur", MessageBoxButton.OK, MessageBoxImage.Information);
+            IsBusy = false;
+        }
     }
 }
