@@ -1,23 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
+using Lagosanto.ViewModels;
+using Lagosanto.ViewModels.DeskDepartment;
+using Lagosanto.ViewModels.FabricationDepartment;
+using Lagosanto.Views;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Lagosanto
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class App: Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        private void ApplicationStart(object sender, StartupEventArgs e)
         {
-            MainWindow = new MainWindow();
-            MainWindow.Show();
-            base.OnStartup(e);
+            
+             LoginWindowView loginView = new LoginWindowView();
+             DatabaseHelper databaseHelper = new DatabaseHelper();
+
+             loginView.Show();
+             loginView.IsVisibleChanged += (_, _) =>
+             {
+                 if (loginView.IsVisible || !loginView.IsLoaded) return;
+                 {
+                     try{
+                         Dispatcher.BeginInvoke(new Action(() =>
+                         {
+                             Window mainView = new MainWindowView();
+                             mainView.DataContext = DependencyInjection().GetRequiredService<MainWindowViewModel>();
+                             mainView.Show();
+                             loginView.Close();
+                         }));
+                     }
+                     catch (Exception exception)
+                     {
+                         Console.WriteLine(exception);
+                         throw;
+                     }
+                 }
+             };  
+            
         }
+
+        private ServiceProvider DependencyInjection()
+        {
+            var services = new ServiceCollection();
+            services.AddSingleton<LoginWindowView>();
+            services.AddSingleton<AddRecipeViewModel>();
+            services.AddSingleton<RecipeViewModel>();
+            services.AddSingleton<AddRecipeViewModel>();
+            services.AddSingleton<FabricationViewModel>();
+            services.AddSingleton<ProductionViewModel>();
+            services.AddSingleton<MainWindowViewModel>();
+            var serviceProvider = services.BuildServiceProvider();
+            return serviceProvider; 
+        }
+        
     }
 }
