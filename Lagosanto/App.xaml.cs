@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Windows;
-using Lagosanto.Interpreter;
-using Lagosanto.Interpreter.Interfaces;
-using Lagosanto.Interpreter.Parser;
 using Lagosanto.ViewModels;
 using Lagosanto.ViewModels.DeskDepartment;
 using Lagosanto.ViewModels.FabricationDepartment;

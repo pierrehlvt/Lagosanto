@@ -1,5 +1,4 @@
-﻿using Lagosanto.Interpreter.Interfaces;
-using Lagosanto.Models;
+﻿using Lagosanto.Models;
 
 namespace Lagosanto.Interpreter;
 

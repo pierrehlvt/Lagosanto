@@ -9,6 +9,7 @@ public class DeskViewModel : ViewModelBase
     private string _caption = null!;
     private IconChar _iconChar;
 
+
     public string Caption
     {
         get { return _caption; }
@@ -49,6 +50,7 @@ public class DeskViewModel : ViewModelBase
         ShowRecipeViewCommand = new ViewModelCommand(ExecuteShowRecipeViewCommand);
         ExecuteShowAddRecipeViewCommand(null!);
     }
+
 
     private void ExecuteShowRecipeViewCommand(object obj)
     {
