@@ -1,6 +1,5 @@
 ﻿using System.Windows.Input;
 using FontAwesome.Sharp;
-using Lagosanto.Services;
 
 namespace Lagosanto.ViewModels.FabricationDepartment;
 

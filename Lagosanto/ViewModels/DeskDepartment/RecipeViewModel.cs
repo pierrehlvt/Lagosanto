@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows.Input;
-using Lagosanto.Models;
+﻿using System.Windows.Input;
 
 namespace Lagosanto.ViewModels.DeskDepartment;
 

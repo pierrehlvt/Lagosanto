@@ -4,43 +4,72 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Lagosanto.Views.DeskDepartment"
-             mc:Ignorable="d"
-             >
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,5,0,0" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="0,5" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="0,20,0,0" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#0078D7" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+    </UserControl.Resources>
     <Grid>
-        <StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
         <TextBox x:Name="InputNewRecipe"
+                 Grid.Row="0"
                  Text="{Binding Recipe, UpdateSourceTrigger=PropertyChanged}"
-                 FontSize="13"
-                 FontWeight="Medium"
-                 FontFamily="Montserrat"                            
                  BorderThickness="0,0,0,2"
                  Height="28"
-                 VerticalContentAlignment="Center"
-                 Margin="0,5,0,25"
-                 Padding="35,0,0,0">
-        </TextBox>
-        
-        <Button x:Name="InputAddCodeArticle"                         
-                BorderThickness="0"
-                Content="Ajouter le code article"
-                FontSize="12"
-                Foreground="White"
-                FontFamily="Montserrat"
-                Cursor="Hand"                           
-                Margin="0,50,0,0"
-                Command="{Binding AddCodeArticleCommand}">
-        </Button>
-        <Button x:Name="InputLaunchNewRecipe"                         
-                BorderThickness="0"
-                Content="Créer la recette"
-                FontSize="12"
-                Foreground="White"
-                FontFamily="Montserrat"
-                Cursor="Hand"                           
-                Margin="0,50,0,0"
-                Command="{Binding AddRecipeCommand}">
-            </Button>
-            </StackPanel>
-        </Grid>
+                 Padding="5"
+                 FontWeight="Medium" />
+
+        <TextBlock Grid.Row="1" Text="Veuillez saisir un code article" />
+        <TextBox Grid.Row="2" Text="{Binding TextValue}"
+                 FontSize="14"
+                 FontWeight="Bold"
+                 FontFamily="Arial"
+                 BorderThickness="1"
+                 BorderBrush="Gray"
+                 Padding="5" />
+
+        <TextBlock Grid.Row="3" Text="Veuillez sélectionner une catégorie" />
+        <ComboBox Grid.Row="4" Name="Box" ItemsSource="{Binding Categories}" DisplayMemberPath="Code"
+                  SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedCategory}" />
+
+        <TextBlock Grid.Row="5" Text="Veuillez sélectionner une opération" />
+        <ComboBox Grid.Row="6" ItemsSource="{Binding Operations}" DisplayMemberPath="Libelle" SelectedValuePath="Id"
+                  SelectedValue="{Binding SelectedOperation}" />
+
+        <Button Grid.Row="8" Content="Ajouter le code article" Command="{Binding AddCodeArticleCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
+        <Button Grid.Row="9" x:Name="InputLaunchNewRecipe" Content="Créer la recette"
+                Command="{Binding AddRecipeCommand}" />
+    </Grid>
 </UserControl>
