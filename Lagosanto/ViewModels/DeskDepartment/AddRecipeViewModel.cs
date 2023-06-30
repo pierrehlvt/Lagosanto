@@ -75,6 +75,8 @@ public class AddRecipeViewModel : ViewModelBase
     }
 
     public ICommand AddRecipeCommand { get; }
+    
+    public ICommand ShowRecipeCommand { get; }
 
     public ICommand AddCodeArticleCommand { get; }
 
@@ -95,9 +97,18 @@ public class AddRecipeViewModel : ViewModelBase
     {
         AddRecipeCommand = new ViewModelCommand(ExecuteAddRecipeCommand, CanExecuteAddRecipeCommand);
         AddCodeArticleCommand = new ViewModelCommand(ExecuteAddCodeArticleCommand);
+        ShowRecipeCommand= new ViewModelCommand(ExecuteShowRecipeCommand);
 
         LoadCategories();
         LoadOperations();
+    }
+
+    private void ExecuteShowRecipeCommand(object obj)
+    {
+        ShowRecipe  showRecipeWindow = new ShowRecipe();
+        ShowRecipeViewModel showRecipeWindowViewModel = new ShowRecipeViewModel();
+        showRecipeWindow.DataContext = showRecipeWindowViewModel;
+        showRecipeWindow.ShowDialog();
     }
 
 

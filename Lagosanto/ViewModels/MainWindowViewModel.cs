@@ -1,11 +1,14 @@
 
 using System.Threading;
+using System.Windows;
+using System.Windows.Input;
 using Lagosanto.Models;
 using Lagosanto.Repositories;
 using Lagosanto.Repositories.Interfaces;
 using Lagosanto.Services;
 using Lagosanto.ViewModels.DeskDepartment;
 using Lagosanto.ViewModels.FabricationDepartment;
+using Lagosanto.Views;
 
 namespace Lagosanto.ViewModels;
 
@@ -28,6 +31,8 @@ public class MainWindowViewModel: ViewModelBase
         }
     }
 
+    public ICommand LogoutCommand { get; }
+
     public ViewModelBase CurrentViewModel
     {
         get
@@ -40,14 +45,28 @@ public class MainWindowViewModel: ViewModelBase
             OnPropertyChanged(nameof(CurrentViewModel));
         }
     }
-    
+
     public MainWindowViewModel()
     {
+        LogoutCommand = new ViewModelCommand(ExecuteLogoutCommand);
         _userRepository = new UserRepository();
         ChangeViewModelDependingOnRole();
-        ProductionService productionService = new ProductionService();
     }
-    
+
+    private void ExecuteLogoutCommand(object obj)
+    {
+        // Create a new instance of LoginWindowView and set it as the MainWindow
+        LoginWindowView loginView = new LoginWindowView();
+        LoginViewModel loginViewModel = new LoginViewModel();
+        loginView.DataContext = loginViewModel;
+        loginView.Show();
+        
+        if (Application.Current.MainWindow != null)
+        {
+            Application.Current.MainWindow.Close();
+        }
+        Application.Current.MainWindow = loginView;
+    }
     protected void ChangeViewModelDependingOnRole()
     {
         User user = _userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);

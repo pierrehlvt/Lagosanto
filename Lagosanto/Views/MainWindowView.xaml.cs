@@ -10,6 +10,9 @@ public partial class MainWindowView : Window
 {
     public MainWindowView()
     {
+        if(Application.Current.MainWindow == null)
+            Application.Current.MainWindow = this;
+        
         InitializeComponent();
     }
     

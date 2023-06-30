@@ -2,15 +2,17 @@ using System.Net;
 using System.Security;
 using System.Security.Principal;
 using System.Threading;
+using System.Windows;
 using System.Windows.Input;
 using Lagosanto.Repositories;
 using Lagosanto.Repositories.Interfaces;
+using Lagosanto.Views;
 
 namespace Lagosanto.ViewModels;
 
 public class LoginViewModel: ViewModelBase
 {
-    
+
     private string _username="";
     private SecureString _password;
     private string _errorMessage = null!;
@@ -93,7 +95,12 @@ public class LoginViewModel: ViewModelBase
         {
             Thread.CurrentPrincipal = new GenericPrincipal(
                 new GenericIdentity(Username), null);
-            IsViewVisible = false;
+            MainWindowView mainWindowView = new MainWindowView();
+            MainWindowViewModel mainWindowViewModel = new MainWindowViewModel();
+            mainWindowView.DataContext = mainWindowViewModel;
+            Application.Current.MainWindow.Close();
+            mainWindowView.Show();
+            Application.Current.MainWindow = mainWindowView;
         }
         else
         {

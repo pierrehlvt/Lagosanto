@@ -70,6 +70,35 @@ public class DataProvider
         Console.WriteLine("La requête a échoué avec le code : " + response.StatusCode);
         return null;
     }
+    
+   /* public async Task<List<Recipe>> GetAllRecipes()
+    {
+        HttpResponseMessage response = await _client.GetAsync("recipes");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var jsonString = await response.Content.ReadAsStringAsync();
+            var recipes = JsonConvert.DeserializeObject<List<Recipe>>(jsonString);
+
+            foreach (var recipe in recipes)
+            {
+               /* var data = new Recipe()
+                {
+                    ArticleId = recipe.id_article,
+                    OperationId = recipe.id_operation,
+                    IdComposant1 = recipe.id_composant1,
+                    Quantity1 = recipe.quantity1,
+                    IdComposant2 = recipe.id_composant2,
+                    Quantity2 = recipe.quantity2
+                };
+
+                return new List<Recipe> {data};
+            }
+        }
+
+        Console.WriteLine("La requête a échoué avec le code : " + response.StatusCode);
+        return null;
+    }*/
 
     public List<Operation> GetAllOperations()
     {

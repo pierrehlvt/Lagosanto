@@ -39,6 +39,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+
         </Grid.RowDefinitions>
 
         <TextBox x:Name="InputNewRecipe"
@@ -67,9 +70,11 @@
         <ComboBox Grid.Row="6" ItemsSource="{Binding Operations}" DisplayMemberPath="Libelle" SelectedValuePath="Id"
                   SelectedValue="{Binding SelectedOperation}" />
 
-        <Button Grid.Row="8" Content="Ajouter le code article" Command="{Binding AddCodeArticleCommand}"
-                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />
+        <!--<Button Grid.Row="8" Content="Ajouter le code article" Command="{Binding AddCodeArticleCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}" />-->
         <Button Grid.Row="9" x:Name="InputLaunchNewRecipe" Content="Créer la recette"
                 Command="{Binding AddRecipeCommand}" />
+        <!--<Button Grid.Row="10" x:Name="ShowRecipe" Content="Voir les recettes"
+                Command="{Binding ShowRecipeCommand}" />  -->
     </Grid>
 </UserControl>

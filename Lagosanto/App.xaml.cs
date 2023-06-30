@@ -19,8 +19,12 @@ namespace Lagosanto
              LoginWindowView loginView = new LoginWindowView();
              DatabaseHelper databaseHelper = new DatabaseHelper();
 
+             string article = "ART(DTS((A003,C084,O05)),CPS((P279729033,C086,O08)))," +
+                              "ART(DTS((A005,C084,006)),CPS((A003,C084,O05,P279729033,C086,O08)))";
+
+             Current.MainWindow = loginView;
              loginView.Show();
-             loginView.IsVisibleChanged += (_, _) =>
+          /*   loginView.IsVisibleChanged += (_, _) =>
              {
                  if (loginView.IsVisible || !loginView.IsLoaded) return;
                  {
@@ -39,7 +43,7 @@ namespace Lagosanto
                          throw;
                      }
                  }
-             };  
+             };  */
             
         }
 
